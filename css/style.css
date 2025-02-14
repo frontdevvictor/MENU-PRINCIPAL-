@@ -26,8 +26,8 @@ body {
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
 }
-.menu-active {
-    transform: rotate(360deg / 8 * var(--i));
+.menu.active li {
+    transform: rotate(calc(360deg / 8 * var(--i)));
 }
 .menu a {
     display: flex;
@@ -42,7 +42,7 @@ body {
     transition: 1s;
     color: transparent;
     transition-delay: 0.5s;
-    filter: drop-shadow(0 0 2px var(-clr));
+    filter: drop-shadow(0 0 2px var(--clr));
 }
 .menu.active a {
     color: var(--clr);
@@ -63,11 +63,11 @@ body {
     height: 50px;
     background: #161616;
     border: 2px solid var(--clr);
-    transform: transform 0.5s, height 0.5s, width 0.5s;
+    transform: rotate(135deg);
+    transition: transform 0.5s, height 0.5s, width 0.5s;
     transition-delay: 0.5s, 1.5s, 1.5s;
     border-radius: 10px;
     filter: drop-shadow(0 0 5px var(--clr));
-    rotate: 135deg;
 }
 .menu.active li:hover a::before {
     background: var(--clr);
