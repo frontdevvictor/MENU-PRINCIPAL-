@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
 }
-
 body {
     display: flex;
     align-items: center;
@@ -17,6 +16,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.menu li {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform: rotate(0deg) translateX(100px);
+    transform-origin: 130px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
 }
 .menu-active {
     transform: rotate(360deg / 8 * var(--i));
@@ -81,4 +89,7 @@ body {
     cursor: pointer;
     font-size: 32px;
     transition: 1.5s;
+}
+.menu.active .menuToggle {
+    transform: rotate(315deg);
 }
